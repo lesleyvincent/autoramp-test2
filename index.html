@@ -535,124 +535,6 @@
 
     .int-icon { font-size: 24px; }
 
-    /* ─── Log / Changelog ───────────────────────────── */
-    #log { background: var(--bg2); }
-
-    .log-timeline {
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .log-timeline::before {
-      content: '';
-      position: absolute;
-      left: 108px;
-      top: 0; bottom: 0;
-      width: 1px;
-      background: linear-gradient(180deg, var(--accent), transparent);
-    }
-
-    @media (max-width: 600px) {
-      .log-timeline::before { left: 0; }
-    }
-
-    .log-entry {
-      display: flex;
-      gap: 32px;
-      margin-bottom: 40px;
-      align-items: flex-start;
-    }
-
-    .log-entry:last-child { margin-bottom: 0; }
-
-    .log-date {
-      width: 76px;
-      flex-shrink: 0;
-      text-align: right;
-      font-size: 12px;
-      color: var(--muted);
-      padding-top: 3px;
-      line-height: 1.4;
-    }
-
-    .log-dot-wrap {
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 4px;
-    }
-
-    .log-dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      border: 2px solid var(--bg2);
-      box-shadow: 0 0 0 2px var(--accent);
-      flex-shrink: 0;
-    }
-
-    .log-dot.minor { background: var(--muted); box-shadow: 0 0 0 2px var(--muted); }
-
-    .log-body { flex: 1; }
-
-    .log-version {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 8px;
-    }
-
-    .log-ver-tag {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent2);
-      background: rgba(26,193,221,.1);
-      border: 1px solid rgba(26,193,221,.25);
-      border-radius: 4px;
-      padding: 2px 8px;
-    }
-
-    .log-ver-title {
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .log-changes {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .log-changes li {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .log-tag {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      padding: 2px 6px;
-      border-radius: 4px;
-      flex-shrink: 0;
-    }
-
-    .tag-new  { background: rgba(52,211,153,.12); color: var(--green); }
-    .tag-fix  { background: rgba(251,146,60,.12);  color: var(--orange); }
-    .tag-imp  { background: rgba(26,193,221,.12);  color: var(--accent2); }
-
-    @media (max-width: 600px) {
-      .log-entry  { gap: 16px; }
-      .log-date   { display: none; }
-    }
-
     /* ─── Architecture ──────────────────────────────── */
     .arch-diagram {
       background: var(--bg3);
@@ -1043,7 +925,6 @@
       <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#personas">Personas</a></li>
       <li><a href="#features">Features</a></li>
-      <li><a href="#log">Log</a></li>
     </ul>
     <div class="nav-cta">
       <button id="theme-toggle" class="btn btn-outline btn-sm theme-toggle" aria-label="Toggle light/dark mode">
@@ -1459,74 +1340,6 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════ LOG ══ -->
-<section id="log" class="section">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="label">Changelog</div>
-      <h2>What's New in <span class="gradient-text">AutoRamp</span></h2>
-      <div class="divider"></div>
-      <p>A running log of updates, improvements, and fixes as AutoRamp evolves.</p>
-    </div>
-
-    <div class="log-timeline">
-
-      <div class="log-entry reveal">
-        <div class="log-date">Feb 25<br />2026</div>
-        <div class="log-dot-wrap"><div class="log-dot"></div></div>
-        <div class="log-body">
-          <div class="log-version">
-            <span class="log-ver-tag">v1.2</span>
-            <span class="log-ver-title">Light / Dark Mode & Teal Rebrand</span>
-          </div>
-          <ul class="log-changes">
-            <li><span class="log-tag tag-new">New</span> Light mode toggle in nav — persists via localStorage</li>
-            <li><span class="log-tag tag-new">New</span> Smooth 250ms color transition on all theme switches</li>
-            <li><span class="log-tag tag-imp">Imp</span> Replaced purple accent with brand teal #1AC1DD throughout</li>
-            <li><span class="log-tag tag-imp">Imp</span> Terminal card stays dark in both modes</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="log-entry reveal">
-        <div class="log-date">Feb 25<br />2026</div>
-        <div class="log-dot-wrap"><div class="log-dot"></div></div>
-        <div class="log-body">
-          <div class="log-version">
-            <span class="log-ver-tag">v1.1</span>
-            <span class="log-ver-title">Persona Tracks & Qualification Demo</span>
-          </div>
-          <ul class="log-changes">
-            <li><span class="log-tag tag-new">New</span> Three persona cards — Business User, Power User, Developer</li>
-            <li><span class="log-tag tag-new">New</span> Interactive qualification demo with clickable options</li>
-            <li><span class="log-tag tag-new">New</span> Scroll-reveal animations on all sections</li>
-            <li><span class="log-tag tag-imp">Imp</span> Removed Architecture section to streamline page flow</li>
-            <li><span class="log-tag tag-fix">Fix</span> Persona pill toggle now deselects previous selection correctly</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="log-entry reveal">
-        <div class="log-date">Feb 25<br />2026</div>
-        <div class="log-dot-wrap"><div class="log-dot minor"></div></div>
-        <div class="log-body">
-          <div class="log-version">
-            <span class="log-ver-tag">v1.0</span>
-            <span class="log-ver-title">Initial Launch</span>
-          </div>
-          <ul class="log-changes">
-            <li><span class="log-tag tag-new">New</span> Hero section with live terminal qualification demo</li>
-            <li><span class="log-tag tag-new">New</span> Five-phase process overview (Qualify → Support)</li>
-            <li><span class="log-tag tag-new">New</span> Features, Integrations, and CTA sections</li>
-            <li><span class="log-tag tag-new">New</span> Deployed to Vercel via GitHub continuous deployment</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ══════════════════════════════════════════════ CTA ══ -->
 <section id="cta" class="section">
   <div class="container">
@@ -1561,7 +1374,6 @@
         <a href="#how-it-works">How It Works</a>
         <a href="#personas">Personas</a>
         <a href="#features">Features</a>
-        <a href="#log">Log</a>
       </div>
       <div style="font-size:12px;color:var(--muted)">
         Built with Claude AI · 2026
