@@ -774,6 +774,47 @@
                   box-shadow .25s ease;
     }
 
+    /* ─── What It Does ──────────────────────────────── */
+    #what-it-does { background: var(--bg); }
+
+    .wid-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .wid-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .wid-grid { grid-template-columns: 1fr; }
+    }
+
+    .wid-card {
+      background: var(--bg2);
+      padding: 36px 32px;
+      transition: background .2s;
+    }
+
+    .wid-card:hover { background: var(--bg3); }
+
+    .wid-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .wid-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
     /* ─── Auth Modal ────────────────────────────────── */
     .auth-overlay {
       display: none;
@@ -922,6 +963,7 @@
       <span>AutoRamp</span>
     </div>
     <ul class="nav-links">
+      <li><a href="#what-it-does">What It Does</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#personas">Personas</a></li>
       <li><a href="#features">Features</a></li>
@@ -1049,6 +1091,51 @@
     </div>
   </div>
 </div>
+
+<!-- ══════════════════════════════════ WHAT IT DOES ══ -->
+<section id="what-it-does" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="label">Capabilities</div>
+      <h2>What <span class="gradient-text">AutoRamp</span> Does</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="wid-grid">
+
+      <div class="wid-card reveal">
+        <h3>Qualifies You First</h3>
+        <p>Asks the right questions about your role, goals, and technical level before building anything. No two ramps are the same.</p>
+      </div>
+
+      <div class="wid-card reveal">
+        <h3>Builds Your Learning Plan</h3>
+        <p>Generates a prioritized, step-by-step path tailored specifically to you — not a generic tutorial everyone else gets.</p>
+      </div>
+
+      <div class="wid-card reveal">
+        <h3>Guides You Through Each Step</h3>
+        <p>Actively walks you through every task with context-aware explanations, real examples, and inline tips.</p>
+      </div>
+
+      <div class="wid-card reveal">
+        <h3>Adapts as You Progress</h3>
+        <p>Tracks what you've mastered and adjusts the plan in real time — speeding up when you're ahead, slowing down when you need it.</p>
+      </div>
+
+      <div class="wid-card reveal">
+        <h3>Works With Any Platform</h3>
+        <p>Onboard users to any SaaS tool, internal system, or API. Bring your platform — AutoRamp handles the rest.</p>
+      </div>
+
+      <div class="wid-card reveal">
+        <h3>Connects to Your Workflow</h3>
+        <p>Pulls from your docs, CRM, and team context so every ramp reflects how your organization actually operates.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════════════════════════════ HOW IT WORKS ══ -->
 <section id="how-it-works" class="section">
